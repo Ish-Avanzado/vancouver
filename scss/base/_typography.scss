@@ -1,0 +1,42 @@
+@font-face {
+    font-family: "Montserrat-Italic";
+    src: url(../fonts/Montserrat-Italic-VariableFont_wght.ttf);
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Montserrat";
+    src: url(../fonts/Montserrat-VariableFont_wght.ttf);
+    font-display: swap;
+  }
+
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+}
+
+h1 {
+    font-size: clamp(4rem, calc(4rem + 1vw), 6rem);
+    line-height: 1.5;
+    margin-bottom: 4rem;
+}
+h2 {
+    font-size: clamp(3rem, calc(3rem + 1vw), 4.5rem);
+    line-height: 1.5;
+    margin-bottom: 4rem;
+}
+h3 {
+    font-size: clamp(2rem, calc(2rem + 1vw), 3.5rem);
+    line-height: 1.5;
+    margin-bottom: 4rem;
+}
+h4 {
+    font-size: clamp(1.6rem, calc(1.6rem + 1vw), 2rem);
+    line-height: 1.5;
+    margin-bottom: 4rem;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
