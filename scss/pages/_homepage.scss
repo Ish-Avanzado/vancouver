@@ -2,7 +2,7 @@
 
 .homeBanner {
   @include backgroundImage($url: "/dist/img/home-banner.jpg");
-  padding: 5rem 0;
+  padding: 15rem 0 5rem;
   @include mediaQuery($mobile) {
     background: $peach;
     .homeBanner__cover {
