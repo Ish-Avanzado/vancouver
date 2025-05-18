@@ -21,6 +21,14 @@
       background: $secondary;
     }
   }
+  &-white{
+    background: $light;
+    color: $primary;
+    &:hover {
+      opacity: 0.9;
+      color: $secondary;
+    }
+  }
 }
 
 

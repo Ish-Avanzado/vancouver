@@ -3,8 +3,19 @@
 .homeBanner {
   @include backgroundImage($url: "/dist/img/home-banner.jpg");
   padding: 5rem 0;
+  @include mediaQuery($mobile) {
+    background: $peach;
+    .homeBanner__cover {
+      @include backgroundImageRight($url: "/dist/img/home-banner.jpg");
+      width: 100%;
+      height: 50rem;
+    }
+  }
   &__wrapper {
     padding: 10rem 0;
+    @include mediaQuery($mobile) {
+      padding: 3rem 0;
+    }
     h1 {
       max-width: 50rem;
       font-size: 4.5rem;
@@ -20,6 +31,10 @@
       padding: 1.5rem 8rem;
       font-weight: 700;
       font-size: 1.5rem;
+      @include mediaQuery($mobile) {
+        width: 100%;
+        place-content: center;
+      }
     }
   }
 }
@@ -28,6 +43,12 @@
   padding: 5rem 0;
   &__wrapper {
     @include grid(5, 2rem);
+    @include mediaQuery($tablet) {
+      @include grid(3, 2rem);
+    }
+    @include mediaQuery($mobile) {
+      @include grid(2, 2rem);
+    }
   }
   &__item {
     display: flex;
@@ -46,19 +67,91 @@
 }
 
 .homeServices {
+  overflow: hidden;
   &__wrapper {
     display: flex;
-    img {
-      width: 50vw;
-      height: 50rem;
-      object-fit: cover;
+    @include mediaQuery($mobile) {
+      display: flex;
+      flex-direction: column;
+    }
+    &:nth-child(even) {
+      flex-direction: row-reverse;
+      @include mediaQuery($mobile) {
+        display: flex;
+        flex-direction: column;
+      }
+      .homeServices__content {
+        transform: translateX(-5rem);
+        justify-items: right;
+        @include mediaQuery($mobile) {
+          transform: translateX(0rem);
+          justify-items: left;
+        }
+        h2 {
+          transform: translateX(-5rem);
+          @include mediaQuery($mobile) {
+            transform: translateX(0rem);
+          }
+        }
+        .button {
+          transform: translateX(-35rem);
+          @include mediaQuery($mobile) {
+            transform: translateX(0rem);
+          }
+        }
+      }
+    }
+    &:nth-child(4) {
+      .homeServices__content {
+        transform: translateX(-5rem);
+        @include mediaQuery($mobile) {
+          transform: translateX(0rem);
+          justify-items: left;
+        }
+        justify-items: right;
+        h2 {
+          transform: translateX(-29rem);
+          @include mediaQuery($mobile) {
+            transform: translateX(0rem);
+          }
+        }
+        .button {
+          transform: translateX(-30rem);
+          @include mediaQuery($mobile) {
+            transform: translateX(0rem);
+          }
+        }
+      }
     }
   }
-  &__content {
-    max-width: $container-width;
+  &__image-1 {
+    @include backgroundImage($url: "/dist/img/services-1.jpg");
     width: 100%;
-    margin-right: auto;
-    padding: 5rem 10rem;
+    height: 50rem;
+  }
+  &__image-2 {
+    @include backgroundImage($url: "/dist/img/services-2.jpg");
+    width: 100%;
+    height: 50rem;
+  }
+  &__image-3 {
+    @include backgroundImage($url: "/dist/img/services-3.jpg");
+    width: 100%;
+    height: 50rem;
+  }
+  &__image-4 {
+    @include backgroundImage($url: "/dist/img/services-4.jpg");
+    width: 100%;
+    height: 50rem;
+  }
+  &__content {
+    width: 100%;
+    transform: translateX(5rem);
+    padding-block: 5rem;
+    @include mediaQuery($mobile) {
+      transform: translateX(0rem);
+      padding: 3rem;
+    }
     h2 {
       font-size: 4rem;
       font-weight: 500;
@@ -70,9 +163,29 @@
       margin-bottom: 3rem;
     }
   }
-  &__wrapper:nth-child(even) {
+}
+
+.articles {
+  padding: 5rem 0;
+  h2 {
+    font-size: 4rem;
+    font-weight: 500;
+    text-align: center;
+    text-decoration: 1px underline;
+  }
+  &__wrapper {
+    @include grid(3, 3rem);
+    @include mediaQuery($mobile) {
+      @include grid(1, 3rem);
+    }
+  }
+  &__card {
+    justify-items: center;
     img {
-      order: 2;
+      @include imageCover(30rem, 30rem);
+    }
+    p {
+      margin-block: 1rem;
     }
   }
 }

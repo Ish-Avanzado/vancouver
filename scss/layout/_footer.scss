@@ -1,0 +1,74 @@
+@use "../abstract/" as *;
+
+.footer {
+  background: $peach;
+  padding: 3rem 0;
+  &__wrapper {
+    @include grid(3);
+    padding-bottom: 3rem;
+    margin-bottom: 3rem;
+    border-bottom: 1px solid $dark;
+    @include mediaQuery($mobile) {
+      @include grid(1);
+      text-align: center;
+    }
+  }
+  &__details {
+    h5 {
+      font-size: 1.6rem;
+      text-transform: uppercase;
+      margin-bottom: 3rem;
+    }
+    ul {
+      margin-bottom: 3rem;
+      li {
+        font-size: 1.6rem;
+        span {
+          text-decoration: underline;
+        }
+      }
+    }
+    p {
+      font-size: 1.6rem;
+    }
+  }
+  &__logo {
+    img {
+      @include imageCover(15rem, 15rem);
+      justify-self: center;
+    }
+  }
+  &__message {
+    text-align: right;
+    @include mediaQuery($mobile) {
+      text-align: center;
+    }
+    p {
+      font-size: 2.3rem;
+    }
+    form {
+      margin-block: 1rem;
+      input {
+        padding: 2rem 1.5rem;
+        width: 30rem;
+        border: 1px solid $gray;
+        @include mediaQuery($mobile) {
+          width: 90%;
+        }
+      }
+      ::placeholder {
+        font-size: 1.5rem;
+        color: $gray;
+        @include mediaQuery($mobile) {
+          text-align: center;
+        }
+      }
+    }
+    .button {
+      margin-top: 3rem;
+    }
+  }
+  .footer__copyright {
+    text-align: center;
+  }
+}

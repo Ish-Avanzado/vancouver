@@ -1,0 +1,37 @@
+@use "../abstract/" as *;
+
+.contact {
+  padding-top: 15rem;
+  &__wrapper {
+    @include gridCustom(1fr 1.5fr, 15rem);
+    @include mediaQuery($mobile){
+      @include gridCustom(1fr, 1rem);
+    }
+    padding: 5rem 0;
+    h2 {
+      font-weight: 500;
+      text-decoration: 5px underline $gray;
+      margin-bottom: 2.5rem;
+    }
+    h4 {
+      margin-top: 3rem;
+      font-size: 2rem;
+    }
+  }
+
+  &__details {
+    ul {
+      margin-bottom: 3rem;
+      li {
+        font-size: 1.6rem;
+        span {
+          color: $primary;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  iframe {
+    @include imageCover(100%, 30rem);
+  }
+}
